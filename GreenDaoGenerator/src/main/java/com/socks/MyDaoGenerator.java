@@ -4,9 +4,10 @@ package com.socks;
  * Created by zhaokaiqiang on 15/5/11.
  */
 
-import de.greenrobot.daogenerator.DaoGenerator;
-import de.greenrobot.daogenerator.Entity;
-import de.greenrobot.daogenerator.Schema;
+
+import org.greenrobot.greendao.generator.DaoGenerator;
+import org.greenrobot.greendao.generator.Entity;
+import org.greenrobot.greendao.generator.Schema;
 
 /**
  * 用来为GreenDao框架生成Dao文件
@@ -14,7 +15,7 @@ import de.greenrobot.daogenerator.Schema;
 public class MyDaoGenerator {
 
 	//辅助文件生成的相对路径
-	public static final String DAO_PATH = "../app/src/main/java-gen";
+	public static final String DAO_PATH = "..\\app\\src\\main\\java-gen";
 	//辅助文件的包名
 	public static final String PACKAGE_NAME = "com.socks.greendao";
 	//数据库的版本号
@@ -29,6 +30,7 @@ public class MyDaoGenerator {
 		addCache(schema, "SisterCache");
 		addCache(schema, "VideoCache");
 		//生成Dao文件路径
+
 		new DaoGenerator().generateAll(schema, DAO_PATH);
 
 	}

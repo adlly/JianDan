@@ -32,22 +32,22 @@ import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 import java.io.File;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 import butterknife.OnClick;
 import uk.co.senab.photoview.PhotoView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class ImageDetailActivity extends BaseActivity implements View.OnClickListener, LoadFinishCallBack {
 
-    @InjectView(R.id.web_gif)
+    @BindView(R.id.web_gif)
     WebView webView;
-    @InjectView(R.id.img)
+    @BindView(R.id.img)
     PhotoView img;
-    @InjectView(R.id.progress)
+    @BindView(R.id.progress)
     ProgressBar progress;
-    @InjectView(R.id.ll_bottom_bar)
+    @BindView(R.id.ll_bottom_bar)
     LinearLayout ll_bottom_bar;
-    @InjectView(R.id.rl_top_bar)
+    @BindView(R.id.rl_top_bar)
     RelativeLayout rl_top_bar;
 
     public static final int ANIMATION_DURATION = 400;
@@ -71,7 +71,7 @@ public class ImageDetailActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void initView() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @OnClick({R.id.img_back, R.id.img_share, R.id.tv_unlike, R.id.tv_like, R.id.img_comment, R.id.img_download})

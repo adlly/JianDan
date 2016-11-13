@@ -26,15 +26,16 @@ import com.socks.jiandan.ui.fragment.MainMenuFragment;
 import com.socks.jiandan.utils.NetWorkUtil;
 import com.socks.jiandan.utils.ShowToast;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.ButterKnife;
-import butterknife.InjectView;
-import de.greenrobot.event.EventBus;
+import butterknife.BindView;
 
 public class MainActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @InjectView(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
     private ActionBarDrawerToggle mActionBarDrawerToggle;
@@ -54,7 +55,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

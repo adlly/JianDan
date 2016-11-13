@@ -6,12 +6,12 @@ import com.socks.greendao.FreshNewsCacheDao;
 import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.model.FreshNews;
 
+import org.greenrobot.greendao.query.QueryBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
 
-import de.greenrobot.dao.query.QueryBuilder;
 
 public class FreshNewsCache extends BaseCache {
 

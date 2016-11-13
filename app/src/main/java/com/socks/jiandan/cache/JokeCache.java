@@ -8,9 +8,10 @@ import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.model.Joke;
 import com.socks.jiandan.net.JSONParser;
 
+import org.greenrobot.greendao.query.QueryBuilder;
+
 import java.util.ArrayList;
 
-import de.greenrobot.dao.query.QueryBuilder;
 
 public class JokeCache extends BaseCache {
 

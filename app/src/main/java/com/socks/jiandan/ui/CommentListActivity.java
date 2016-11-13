@@ -19,17 +19,17 @@ import com.socks.jiandan.utils.ShowToast;
 import com.victor.loading.rotate.RotateLoading;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class CommentListActivity extends BaseActivity implements LoadResultCallBack {
 
-    @InjectView(R.id.swipe_refresh)
+    @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @InjectView(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @InjectView(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
     private String thread_key;
@@ -47,7 +47,7 @@ public class CommentListActivity extends BaseActivity implements LoadResultCallB
 
     @Override
     public void initView() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);

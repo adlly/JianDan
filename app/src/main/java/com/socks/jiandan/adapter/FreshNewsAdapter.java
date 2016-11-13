@@ -33,8 +33,8 @@ import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.Optional;
 
 public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.ViewHolder> {
@@ -193,27 +193,27 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.tv_title)
+        @BindView(R.id.tv_title)
         TextView tv_title;
-        @InjectView(R.id.tv_info)
+        @BindView(R.id.tv_info)
         TextView tv_info;
-        @InjectView(R.id.tv_views)
+        @BindView(R.id.tv_views)
         TextView tv_views;
-        @Optional
-        @InjectView(R.id.tv_share)
+        
+        @BindView(R.id.tv_share)
         TextView tv_share;
-        @InjectView(R.id.img)
+        @BindView(R.id.img)
         ImageView img;
-        @Optional
-        @InjectView(R.id.card)
+
+        @BindView(R.id.card)
         CardView card;
-        @Optional
-        @InjectView(R.id.ll_content)
+
+        @BindView(R.id.ll_content)
         LinearLayout ll_content;
 
         public ViewHolder(View contentView) {
             super(contentView);
-            ButterKnife.inject(this, contentView);
+            ButterKnife.bind(this, contentView);
         }
     }
 

@@ -23,13 +23,13 @@ import com.socks.jiandan.utils.String2TimeUtil;
 import com.victor.loading.rotate.RotateLoading;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class FreshNewsDetailFragment extends BaseFragment {
 
-    @InjectView(R.id.webView)
+    @BindView(R.id.webView)
     WebView webView;
-    @InjectView(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
 
@@ -50,7 +50,7 @@ public class FreshNewsDetailFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fresh_news_detail, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 

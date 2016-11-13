@@ -26,19 +26,20 @@ import com.socks.jiandan.view.AutoLoadRecyclerView;
 import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 import com.victor.loading.rotate.RotateLoading;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.File;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
-import de.greenrobot.event.EventBus;
+import butterknife.BindView;
 
 public class PictureFragment extends BaseFragment implements LoadResultCallBack, LoadFinishCallBack {
 
-    @InjectView(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     AutoLoadRecyclerView mRecyclerView;
-    @InjectView(R.id.swipeRefreshLayout)
+    @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @InjectView(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
     private PictureAdapter mAdapter;
@@ -70,7 +71,7 @@ public class PictureFragment extends BaseFragment implements LoadResultCallBack,
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_auto_load, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 

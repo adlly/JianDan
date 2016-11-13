@@ -38,8 +38,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.Optional;
 
 /**
@@ -339,28 +339,22 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
     static class CommentViewHolder extends RecyclerView.ViewHolder {
 
-        @Optional
-        @InjectView(R.id.tv_name)
+        @BindView(R.id.tv_name)
         TextView tv_name;
-        @Optional
-        @InjectView(R.id.tv_content)
+        @BindView(R.id.tv_content)
         TextView tv_content;
-        @Optional
-        @InjectView(R.id.tv_flag)
+        @BindView(R.id.tv_flag)
         TextView tv_flag;
-        @Optional
-        @InjectView(R.id.tv_time)
+        @BindView(R.id.tv_time)
         TextView tv_time;
-        @Optional
-        @InjectView(R.id.img_header)
+        @BindView(R.id.img_header)
         ImageView img_header;
-        @Optional
-        @InjectView(R.id.floors_parent)
+        @BindView(R.id.floors_parent)
         FloorView floors_parent;
 
         public CommentViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
             setIsRecyclable(false);
         }
     }

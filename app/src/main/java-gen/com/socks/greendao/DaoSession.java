@@ -1,13 +1,12 @@
 package com.socks.greendao;
 
-import android.database.sqlite.SQLiteDatabase;
-
 import java.util.Map;
 
-import de.greenrobot.dao.AbstractDao;
-import de.greenrobot.dao.AbstractDaoSession;
-import de.greenrobot.dao.identityscope.IdentityScopeType;
-import de.greenrobot.dao.internal.DaoConfig;
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.AbstractDaoSession;
+import org.greenrobot.greendao.database.Database;
+import org.greenrobot.greendao.identityscope.IdentityScopeType;
+import org.greenrobot.greendao.internal.DaoConfig;
 
 import com.socks.greendao.JokeCache;
 import com.socks.greendao.FreshNewsCache;
@@ -26,7 +25,7 @@ import com.socks.greendao.VideoCacheDao;
 /**
  * {@inheritDoc}
  * 
- * @see de.greenrobot.dao.AbstractDaoSession
+ * @see org.greenrobot.greendao.AbstractDaoSession
  */
 public class DaoSession extends AbstractDaoSession {
 
@@ -42,7 +41,7 @@ public class DaoSession extends AbstractDaoSession {
     private final SisterCacheDao sisterCacheDao;
     private final VideoCacheDao videoCacheDao;
 
-    public DaoSession(SQLiteDatabase db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
+    public DaoSession(Database db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
 
@@ -75,11 +74,11 @@ public class DaoSession extends AbstractDaoSession {
     }
     
     public void clear() {
-        jokeCacheDaoConfig.getIdentityScope().clear();
-        freshNewsCacheDaoConfig.getIdentityScope().clear();
-        pictureCacheDaoConfig.getIdentityScope().clear();
-        sisterCacheDaoConfig.getIdentityScope().clear();
-        videoCacheDaoConfig.getIdentityScope().clear();
+        jokeCacheDaoConfig.clearIdentityScope();
+        freshNewsCacheDaoConfig.clearIdentityScope();
+        pictureCacheDaoConfig.clearIdentityScope();
+        sisterCacheDaoConfig.clearIdentityScope();
+        videoCacheDaoConfig.clearIdentityScope();
     }
 
     public JokeCacheDao getJokeCacheDao() {

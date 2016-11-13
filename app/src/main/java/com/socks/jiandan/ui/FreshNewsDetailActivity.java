@@ -17,13 +17,13 @@ import com.socks.jiandan.ui.fragment.FreshNewsDetailFragment;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class FreshNewsDetailActivity extends BaseActivity {
 
-    @InjectView(R.id.vp)
+    @BindView(R.id.vp)
     ViewPager viewPager;
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override
@@ -36,7 +36,7 @@ public class FreshNewsDetailActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationIcon(R.drawable.ic_actionbar_back);

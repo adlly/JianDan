@@ -20,15 +20,15 @@ import com.socks.jiandan.view.AutoLoadRecyclerView;
 import com.victor.loading.rotate.RotateLoading;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class JokeFragment extends BaseFragment implements LoadResultCallBack {
 
-    @InjectView(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     AutoLoadRecyclerView mRecyclerView;
-    @InjectView(R.id.swipeRefreshLayout)
+    @BindView(R.id.swipeRefreshLayout)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @InjectView(R.id.loading)
+    @BindView(R.id.loading)
     RotateLoading loading;
 
     private JokeAdapter mAdapter;
@@ -46,7 +46,7 @@ public class JokeFragment extends BaseFragment implements LoadResultCallBack {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_auto_load, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         return view;
     }
 

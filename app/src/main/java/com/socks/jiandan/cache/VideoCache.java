@@ -8,9 +8,9 @@ import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.model.Video;
 import com.socks.jiandan.net.JSONParser;
 
-import java.util.ArrayList;
+import org.greenrobot.greendao.query.QueryBuilder;
 
-import de.greenrobot.dao.query.QueryBuilder;
+import java.util.ArrayList;
 
 public class VideoCache extends BaseCache {
 

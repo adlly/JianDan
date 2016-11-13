@@ -25,13 +25,13 @@ import com.socks.jiandan.ui.SettingActivity;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class MainMenuFragment extends BaseFragment {
 
-    @InjectView(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
-    @InjectView(R.id.rl_container)
+    @BindView(R.id.rl_container)
     RelativeLayout rl_container;
 
     private LinearLayoutManager mLayoutManager;
@@ -54,7 +54,7 @@ public class MainMenuFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_drawer, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);

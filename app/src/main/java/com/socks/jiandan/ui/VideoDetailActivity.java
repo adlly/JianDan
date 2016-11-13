@@ -22,21 +22,21 @@ import com.socks.jiandan.utils.ShareUtil;
 import com.socks.jiandan.utils.TextUtil;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class VideoDetailActivity extends BaseActivity implements View.OnClickListener {
 
-    @InjectView(R.id.webview)
+    @BindView(R.id.webview)
     WebView webview;
-    @InjectView(R.id.progress)
+    @BindView(R.id.progress)
     ProgressBar progress;
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @InjectView(R.id.imgBtn_back)
+    @BindView(R.id.imgBtn_back)
     ImageButton imgBtn_back;
-    @InjectView(R.id.imgBtn_forward)
+    @BindView(R.id.imgBtn_forward)
     ImageButton imgBtn_forward;
-    @InjectView(R.id.imgBtn_control)
+    @BindView(R.id.imgBtn_control)
     ImageButton imgBtn_control;
 
     private String url;
@@ -55,7 +55,7 @@ public class VideoDetailActivity extends BaseActivity implements View.OnClickLis
     @Override
     public void initView() {
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle(R.string.loading);

@@ -30,15 +30,15 @@ import com.socks.jiandan.utils.TextUtil;
 import java.util.HashMap;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class PushCommentActivity extends BaseActivity {
 
-    @InjectView(R.id.tv_title)
+    @BindView(R.id.tv_title)
     TextView tv_title;
-    @InjectView(R.id.et_content)
+    @BindView(R.id.et_content)
     EditText et_content;
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     private String thread_id;
@@ -65,7 +65,7 @@ public class PushCommentActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle("回复");

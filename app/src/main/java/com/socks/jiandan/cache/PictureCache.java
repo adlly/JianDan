@@ -8,9 +8,10 @@ import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.model.Picture;
 import com.socks.jiandan.net.JSONParser;
 
+import org.greenrobot.greendao.query.QueryBuilder;
+
 import java.util.ArrayList;
 
-import de.greenrobot.dao.query.QueryBuilder;
 
 /**
  * Created by zhaokaiqiang on 15/5/11.

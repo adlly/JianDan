@@ -9,11 +9,11 @@ import com.socks.jiandan.R;
 import com.socks.jiandan.base.BaseActivity;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.BindView;
 
 public class SettingActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override
@@ -25,7 +25,7 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         mToolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle(R.string.title_activity_setting);

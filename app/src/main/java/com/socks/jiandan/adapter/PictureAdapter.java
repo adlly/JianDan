@@ -47,8 +47,8 @@ import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureViewHolder> {
 
@@ -322,40 +322,40 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureV
 
     public static class PictureViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.tv_author)
+        @BindView(R.id.tv_author)
         TextView tv_author;
-        @InjectView(R.id.tv_time)
+        @BindView(R.id.tv_time)
         TextView tv_time;
-        @InjectView(R.id.tv_content)
+        @BindView(R.id.tv_content)
         TextView tv_content;
-        @InjectView(R.id.tv_like)
+        @BindView(R.id.tv_like)
         TextView tv_like;
-        @InjectView(R.id.tv_unlike)
+        @BindView(R.id.tv_unlike)
         TextView tv_unlike;
-        @InjectView(R.id.tv_comment_count)
+        @BindView(R.id.tv_comment_count)
         TextView tv_comment_count;
-        @InjectView(R.id.tv_unsupport_des)
+        @BindView(R.id.tv_unsupport_des)
         TextView tv_un_support_des;
-        @InjectView(R.id.tv_support_des)
+        @BindView(R.id.tv_support_des)
         TextView tv_support_des;
 
-        @InjectView(R.id.img_share)
+        @BindView(R.id.img_share)
         ImageView img_share;
-        @InjectView(R.id.img_gif)
+        @BindView(R.id.img_gif)
         ImageView img_gif;
-        @InjectView(R.id.img)
+        @BindView(R.id.img)
         ShowMaxImageView img;
 
-        @InjectView(R.id.ll_comment)
+        @BindView(R.id.ll_comment)
         LinearLayout ll_comment;
-        @InjectView(R.id.progress)
+        @BindView(R.id.progress)
         ProgressBar progress;
-        @InjectView(R.id.card)
+        @BindView(R.id.card)
         CardView card;
 
         public PictureViewHolder(View contentView) {
             super(contentView);
-            ButterKnife.inject(this, contentView);
+            ButterKnife.bind(this, contentView);
         }
     }
 }
