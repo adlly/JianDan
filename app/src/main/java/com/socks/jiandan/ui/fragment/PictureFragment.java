@@ -27,6 +27,7 @@ import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 import com.victor.loading.rotate.RotateLoading;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.io.File;
 
@@ -106,6 +107,7 @@ public class PictureFragment extends BaseFragment implements LoadResultCallBack,
         loading.start();
     }
 
+    @Subscribe
     public void onEventMainThread(NetWorkEvent event) {
 
         if (event.getType() == NetWorkEvent.AVAILABLE) {

@@ -27,6 +27,7 @@ import com.socks.jiandan.utils.NetWorkUtil;
 import com.socks.jiandan.utils.ShowToast;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
@@ -112,6 +113,7 @@ public class MainActivity extends BaseActivity {
         EventBus.getDefault().unregister(this);
     }
 
+    @Subscribe
     public void onEvent(NetWorkEvent event) {
 
         if (event.getType() == NetWorkEvent.UNAVAILABLE) {

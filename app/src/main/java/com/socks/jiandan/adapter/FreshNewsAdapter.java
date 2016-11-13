@@ -2,6 +2,7 @@ package com.socks.jiandan.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import com.socks.jiandan.base.ConstantString;
 import com.socks.jiandan.cache.FreshNewsCache;
 import com.socks.jiandan.callback.LoadFinishCallBack;
 import com.socks.jiandan.callback.LoadResultCallBack;
+import com.socks.jiandan.model.CustomFields;
 import com.socks.jiandan.model.FreshNews;
 import com.socks.jiandan.net.JSONParser;
 import com.socks.jiandan.net.Request4FreshNews;
@@ -91,11 +93,15 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
 
         final FreshNews freshNews = mFreshNews.get(position);
 
-        ImageLoadProxy.displayImage(freshNews.getCustomFields().getThumb_m(), holder.img, options);
-        holder.tv_title.setText(freshNews.getTitle());
-        holder.tv_info.setText(freshNews.getAuthor().getName() + "@" + freshNews.getTags()
-                .getTitle());
-        holder.tv_views.setText("浏览" + freshNews.getCustomFields().getViews() + "次");
+        CustomFields customFields = freshNews.getCustomFields();
+        if (customFields != null){
+            ImageLoadProxy.displayImage(customFields.getThumb_m(), holder.img, options);
+            holder.tv_title.setText(freshNews.getTitle());
+            holder.tv_info.setText(freshNews.getAuthor().getName() + "@" + freshNews.getTags()
+                    .getTitle());
+            holder.tv_views.setText("浏览" + customFields.getViews() + "次");
+        }
+
 
         if (isLargeMode) {
             holder.tv_share.setOnClickListener(new View.OnClickListener() {
@@ -208,6 +214,7 @@ public class FreshNewsAdapter extends RecyclerView.Adapter<FreshNewsAdapter.View
         @BindView(R.id.card)
         CardView card;
 
+        @Nullable
         @BindView(R.id.ll_content)
         LinearLayout ll_content;
 
